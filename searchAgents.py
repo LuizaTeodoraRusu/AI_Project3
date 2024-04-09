@@ -33,7 +33,6 @@ description for details.
 
 Good luck and happy searching!
 
-#proiect realizat de Padeanu Andreea si Rusu Luiza
 """
 
 from typing import List, Tuple, Any
@@ -300,7 +299,6 @@ class CornersProblem(search.SearchProblem):
         """
         "*** YOUR CODE HERE ***"
 
-        #Luiza Rusu
         return (self.startingPosition, self.corners)
 
 
@@ -309,7 +307,6 @@ class CornersProblem(search.SearchProblem):
         Returns whether this search state is a goal state of the problem.
         """
         "*** YOUR CODE HERE ***"
-        #Andreea Padeanu
         return not state[1]
 
     def getSuccessors(self, state: Any):
@@ -333,7 +330,6 @@ class CornersProblem(search.SearchProblem):
             #   hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
-            #Andreea Padeanu
             x, y = state[0]
             dx, dy = Actions.directionToVector(action)
             nextx, nexty = int(x + dx), int(y + dy)
@@ -372,7 +368,6 @@ def cornersHeuristic(state: Any, problem: CornersProblem):
     """
 
     "*** YOUR CODE HERE ***"
-    #Luiza Rusu
     pacmanPos, unvisitedCorners = state
     if not unvisitedCorners:
         return 0  # Default to trivial solution
@@ -472,7 +467,6 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    #Andreea Padeanu
     if not foodGrid.asList():
         return 0  # No remaining food, heuristic is 0
 
@@ -511,7 +505,6 @@ class ClosestDotSearchAgent(SearchAgent):
         problem = AnyFoodSearchProblem(gameState)
 
         "*** YOUR CODE HERE ***"
-        #Luiza Rusu
         return search.bfs(problem)
 
 class AnyFoodSearchProblem(PositionSearchProblem):
@@ -548,7 +541,6 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         x,y = state
 
         "*** YOUR CODE HERE ***"
-        #Luiza Rusu
         return self.food[x][y]
 
 def mazeDistance(point1: Tuple[int, int], point2: Tuple[int, int], gameState: pacman.GameState) -> int:
